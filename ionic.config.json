@@ -1,0 +1,7 @@
+{
+  "name": "ionicPurchase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
