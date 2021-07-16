@@ -1,6 +1,6 @@
 {
-  "name": "ionicPurchase",
-  "version": "0.0.1",
+  "name": "planeta-trader",
+  "version": "0.0.4",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
@@ -15,15 +15,21 @@
   "dependencies": {
     "@angular/common": "~12.0.1",
     "@angular/core": "~12.0.1",
+    "@angular/fire": "^6.1.5",
     "@angular/forms": "~12.0.1",
     "@angular/platform-browser": "~12.0.1",
     "@angular/platform-browser-dynamic": "~12.0.1",
     "@angular/router": "~12.0.1",
+    "@capacitor/android": "^3.0.2",
     "@capacitor/app": "1.0.2",
     "@capacitor/core": "3.0.2",
     "@capacitor/haptics": "1.0.2",
+    "@capacitor/ios": "^3.0.2",
     "@capacitor/keyboard": "1.0.2",
+    "@ionic-native/in-app-purchase-2": "^5.33.1",
     "@ionic/angular": "^5.5.2",
+    "cordova-plugin-purchase": "^10.6.0",
+    "firebase": "^8.6.8",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -61,5 +67,5 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
   },
-  "description": "An Ionic project"
+  "description": "Aplicativo para visualização e compra de revista do Planeta Trader"
 }

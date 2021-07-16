@@ -1,0 +1,6 @@
+{
+	"appId": "com.br.planetatrader.revista",
+	"appName": "planeta-trader",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

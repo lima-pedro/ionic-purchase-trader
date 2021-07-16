@@ -1,20 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card *ngFor="let revista of revistas">
+    <ion-card-content>
+      <img src="{{ revista.imagens[0] }}">
+      <ion-label>
+        Edição
+        <strong>{{ revista.edicao }}</strong>
+      </ion-label>
+        <ion-button
+          (click)="assinaturaRevista(revista.id)"
+          expand="block">
+        Assinar revista
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card *ngFor="let p of products">
+    <ion-card-content>
+      <ion-label>
+
+        <p>
+          <strong>{{p.title}}</strong>
+        </p>
+        <p>
+          <strong>{{p.description}}</strong>
+        </p>
+        <p>
+          <strong>{{p.price}}</strong>
+        </p>
+        <p>
+          <strong>{{p.currency}}</strong>
+        </p>
+      
+      </ion-label>
+        <ion-button
+          (click)="purchase(p)"
+          expand="block">
+        Assinar revista
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

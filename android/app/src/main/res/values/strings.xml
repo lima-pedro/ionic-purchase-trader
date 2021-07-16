@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ionicPurchase</string>
+    <string name="title_activity_main">ionicPurchase</string>
+    <string name="package_name">com.br.planetatrader.revista</string>
+    <string name="custom_url_scheme">com.br.planetatrader.revista</string>
+</resources>

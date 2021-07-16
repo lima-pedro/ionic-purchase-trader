@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.br.planetatrader.revista',
-  appName: 'ionicPurchase',
+  appName: 'planeta-trader',
   webDir: 'www',
   bundledWebRuntime: false
 };
