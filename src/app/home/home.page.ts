@@ -26,12 +26,12 @@ export class HomePage {
         private router: Router,
     ) {
         this.plt.ready().then(() => {
-            // this.store.verbosity = this.store.DEBUG;
+            this.store.verbosity = this.store.DEBUG;
 
             this.registerProducts();
             this.setupListeners();
 
-            this.store.ready(()=>{
+            this.store.ready(() => {
                 this.products = this.store.products;
                 this.ref.detectChanges();
             })
@@ -46,16 +46,18 @@ export class HomePage {
     buscarRevistas() {
         this.revistas = [];
         this.revistaService.getAll().subscribe(data => {
-          data.map(c => {
-            let revista: any = c.payload.doc.data();
-            this.revistas.push({
-              ...revista,
-              id: c.payload.doc.id
+            data.map(c => {
+                let revista: any = c.payload.doc.data();
+                this.revistas.push({
+                    ...revista,
+                    id: c.payload.doc.id
+                })
             })
-          })
         })
-      }
-    
+    }
+
+    getProducts () {    
+    }
 
     registerProducts() {
         this.store.register({
@@ -72,19 +74,13 @@ export class HomePage {
     }
 
     setupListeners() {
+        console.log(this.store.when('product'));
         this.store.when('product')
             .approved((product: IAPProduct) => {
-                console.log(product);
-                // if (p.id === PRODUCT_TEST_PRO) {
-                //     this.isPro = true;
-                // } else if (p.id === PRODUCT_TEST) {
-                //     this.gems += 100;
-                // }
                 this.ref.detectChanges();
-
                 return product.verify();
             })
-            .verified((product: IAPProduct)=>product.finish());
+            .verified((product: IAPProduct) => product.finish());
 
         this.store.when(PRODUCT_TEST).owned((p: IAPProduct) => {
             this.isPro = true;
@@ -93,7 +89,7 @@ export class HomePage {
 
     purchase(product: IAPProduct) {
         this.store.order(product).then(p => {
-            console.log(`p order`,p)
+            console.log(`p order`, p)
         }, e => {
             console.log("Erro", e)
         })
@@ -107,14 +103,14 @@ export class HomePage {
         console.log(id_revista);
         const revista = this.revistas.filter(encontrado => encontrado.id === id_revista)
         const navigationExtras: NavigationExtras = {
-          state: {
-              revista: revista[0]
-          },
+            state: {
+                revista: revista[0]
+            },
         };
         this.router.navigate(["/visualizacao"], navigationExtras);
     }
-    
-    assinaturaRevista (id_revista: string) {
-    
+
+    assinaturaRevista(id_revista: string) {
+
     }
 }
